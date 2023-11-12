@@ -1,0 +1,11 @@
+C:\Users\pc\wp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\pc\wp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\pc\wp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\wp.csproj.AssemblyReference.cache
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\wp.csproj.GenerateResource.cache
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\wp.csproj.CoreCompileInputs.cache
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\pc\wp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources

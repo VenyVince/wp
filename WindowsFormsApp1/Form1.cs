@@ -13,10 +13,20 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+
+        private Boolean m_blLoginCheck = false;
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        public Boolean LoginCheck
+        {
+            get { return m_blLoginCheck; }
+            set { m_blLoginCheck = value; }
+        }
+
 
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
@@ -159,6 +169,15 @@ namespace WindowsFormsApp1
             }
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
         }
+
+       private void Form1_Load(object sender, EventArgs e)
+        {
+            Form2 _form2 = new Form2(this);
+                _form2.ShowDialog();
+
+            if (!m_blLoginCheck) this.Close();
+        }
+
     }
     }
 
