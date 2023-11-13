@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        //test1
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
             // 가게 이름, 전화번호, 주소, 음식 종류의 텍스트 박스 확인.
