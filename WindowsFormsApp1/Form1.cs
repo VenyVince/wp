@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,48 +42,46 @@ namespace WindowsFormsApp1
                 textBox5.Text = "";
             }
             // 가게 이름, 전화번호, 주소, 음식 종류중 미입력 정보가 있으면 메세지박스 띄움.
-            // + 추가할만한 기능 = 메세지박스 확인후 키보드 포커스 설정
+            // 메세지박스 확인후 키보드 포커스 설정
             else if (textBox1.Text == "")
             {
-                MessageBox.Show("가게 이름을 입력해 주세요.");
+                if(MessageBox.Show("가게 이름을 입력해 주세요.", "error")==DialogResult.OK)
+                    textBox1.Focus();
             }
             else if (textBox2.Text == "")
             {
-                MessageBox.Show("전화번호를 입력해 주세요.");
+                if(MessageBox.Show("전화번호를 입력해 주세요.", "error")==DialogResult.OK)
+                    textBox2.Focus();
             }
             else if (textBox3.Text == "")
             {
-                MessageBox.Show("주소를 입력해 주세요.");
+                if(MessageBox.Show("주소를 입력해 주세요.", "error")== DialogResult.OK)
+                    textBox3.Focus();
             }
             else if (textBox4.Text == "")
             {
-                MessageBox.Show("음식 종류를 입력해 주세요.");
+                if(MessageBox.Show("음식 종류를 입력해 주세요.", "error")==DialogResult.OK)
+                    textBox4.Focus();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            string nameToSearch = textBox1.Text; // 검색할 이름
-            string newName = textBox2.Text; // 새로운 이름
-            string newPhone = textBox3.Text; // 새로운 전화번호
-            string newAddress = textBox4.Text; // 새로운 주소
-            string newType = textBox5.Text; // 새로운 종류
-
-
-            // 예시: ListView에서 검색한 이름과 일치하는 항목을 찾고 수정
-            foreach (ListViewItem item in listView1.Items)
+            if (listView1.SelectedItems.Count == 0)
             {
-                if (item.SubItems[0].Text == nameToSearch)
-                {
-                    item.SubItems[0].Text = newName;
-                    item.SubItems[1].Text = newPhone;
-                    item.SubItems[2].Text = newAddress;
-                    item.SubItems[3].Text = newType;
-                }
+                MessageBox.Show("수정할 항목을 선택해 주세요.");
+                return;
             }
 
+            ListViewItem selectedItem = listView1.SelectedItems[0];
+            selectedItem.SubItems[0].Text = textBox1.Text;
+            selectedItem.SubItems[1].Text = textBox2.Text;
+            selectedItem.SubItems[2].Text = textBox3.Text;
+            selectedItem.SubItems[3].Text = textBox4.Text;
+            selectedItem.SubItems[4].Text = textBox5.Text;
 
-            // 수정이 성공하면 사용자에게 메시지를 표시합니다.
+            // 입력 필드를 지웁니다
+            ClearTextBoxes();
+
             MessageBox.Show("정보가 변경되었습니다.");
         }
 
@@ -90,16 +89,25 @@ namespace WindowsFormsApp1
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                // ListView에서 선택한 항목의 정보를 가져와서 다른 텍스트 상자에 표시
                 ListViewItem selectedItem = listView1.SelectedItems[0];
-                textBox1.Text = selectedItem.SubItems[0].Text; // 가게 이름
-                textBox2.Text = selectedItem.SubItems[1].Text; // 전화번호
-                textBox3.Text = selectedItem.SubItems[2].Text; // 주소
-                textBox4.Text = selectedItem.SubItems[3].Text; // 음식 종류
-                textBox5.Text = selectedItem.SubItems[4].Text; // 메모
+                textBox1.Text = selectedItem.SubItems[0].Text;
+                textBox2.Text = selectedItem.SubItems[1].Text;
+                textBox3.Text = selectedItem.SubItems[2].Text;
+                textBox4.Text = selectedItem.SubItems[3].Text;
+                textBox5.Text = selectedItem.SubItems[4].Text;
             }
         }
 
+        private void ClearTextBoxes()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+        }
+
+       
         private void button3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("선택하신 항목이 삭제됩니다.\r계속 하시겠습니다?", "항목 삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -158,6 +166,20 @@ namespace WindowsFormsApp1
                 listView1.Items.Add(item); // 삭제된 항목을 다시 ListView에 추가
             }
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
+        }// 푸쉬 테스트
+
+        private void listView1_DoubleClick(object sender, EventArgs e) // 하이퍼링크 실험중(가게이름 더블클릭)
+        {
+            foreach(ListViewItem item in listView1.SelectedItems)
+            {
+                ListViewItem.ListViewSubItemCollection subItem = item.SubItems; // 리스트뷰 가게이름 가져오기
+                
+                // 메세지박스 YES == 네이버에 해당 가게이름 검색
+                if(MessageBox.Show("'" + subItem[0].Text +"'"+ " 네이버에 검색", subItem[0].Text + " 링크", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    Process.Start("https://map.naver.com/p/search/" + subItem[0].Text);
+                }
+            }
         }
     }
     }

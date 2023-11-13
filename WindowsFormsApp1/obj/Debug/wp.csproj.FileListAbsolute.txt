@@ -1,0 +1,11 @@
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\wp.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\wp.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\wp.csproj.GenerateResource.cache
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\wp.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\user\Downloads\wp-master\dd\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
