@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
 
                 //저장 완료시 메세지박스 출력.
                 MessageBox.Show("입력하신 정보가 리스트뷰에 입력되었습니다.", "저장 성공!!");
+                textBox1.Focus();
             }
             // 가게 이름, 전화번호, 주소, 음식 종류중 미입력 정보가 있으면 메세지박스 띄움.
             // 메세지박스 확인후 키보드 포커스 설정
@@ -154,19 +155,33 @@ namespace WindowsFormsApp1
 
             foreach (ListViewItem 가게이름 in listView1.Items)
             {
+                ListViewItem.ListViewSubItemCollection subItem = 가게이름.SubItems; // 리스트뷰 가게이름 가져오기
 
-                if (!가게이름.Text.Contains(이름))
+                if (subItem[0].Text == 이름)
                 {
-                    listView1.Items.Remove(가게이름);
-                    deletedItems.Add(가게이름);
+                    if (MessageBox.Show("가게이름\n" + subItem[0].Text + "\n" +
+                        "\n전화번호\n" + subItem[1].Text + "\n" + 
+                        "\n주소\n" + subItem[2].Text + "\n" +
+                        "\n종류\n" + subItem[3].Text + "\n" + 
+                        "\n메모\n"  + subItem[4].Text + "\n" +
+                        "네이버에 검색하시겠습니까?",
+                        "'" + subItem[0].Text + "'" + " 검색 결과", MessageBoxButtons.YesNo) == DialogResult.Yes) // 메세지박스 YES == 네이버에 해당 가게이름 검색
+                    {
+                        Process.Start("https://map.naver.com/p/search/" + subItem[0].Text);
+                    }
+                    textBox6.Clear();
                 }
-
+                else
+                {
+                    if (MessageBox.Show("검색 결과가 없습니다.", "오류") == DialogResult.OK)
+                        textBox6.Focus();
+                }
             }
+
             string 음식종류 = textBox7.Text;
 
             foreach (ListViewItem 종류 in listView1.Items)
             {
-
                 if (!종류.SubItems[3].Text.Contains(음식종류))
                 {
                     listView1.Items.Remove(종류);
@@ -191,12 +206,19 @@ namespace WindowsFormsApp1
                 ListViewItem.ListViewSubItemCollection subItem = item.SubItems; // 리스트뷰 가게이름 가져오기
 
                 // 메세지박스 YES == 네이버에 해당 가게이름 검색
-                if (MessageBox.Show("'" + subItem[0].Text + "'" + " 네이버에 검색", subItem[0].Text + " 링크", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("가게이름\n" + subItem[0].Text + "\n" +
+                        "\n전화번호\n" + subItem[1].Text + "\n" +
+                        "\n주소\n" + subItem[2].Text + "\n" +
+                        "\n종류\n" + subItem[3].Text + "\n" +
+                        "\n메모\n" + subItem[4].Text + "\n" +
+                        "네이버에 검색하시겠습니까?",
+                        "'" + subItem[0].Text + "'" + " 검색 결과", MessageBoxButtons.YesNo) == DialogResult.Yes) // 메세지박스 YES == 네이버에 해당 가게이름 검색
                 {
                     Process.Start("https://map.naver.com/p/search/" + subItem[0].Text);
                 }
                 // 텍스트박스 클리어
-                    ClearTextBoxes();
+                ClearTextBoxes();
+                textBox6.Focus();
             }
         }
 
