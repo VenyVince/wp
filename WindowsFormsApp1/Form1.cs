@@ -49,6 +49,9 @@ namespace WindowsFormsApp1
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
+
+                //저장 완료시 메세지박스 출력.
+                MessageBox.Show("입력하신 정보가 리스트뷰에 입력되었습니다.", "저장 성공!!");
             }
             // 가게 이름, 전화번호, 주소, 음식 종류중 미입력 정보가 있으면 메세지박스 띄움.
             // 메세지박스 확인후 키보드 포커스 설정
@@ -119,7 +122,6 @@ namespace WindowsFormsApp1
         // 삭제시 - 삭제한 데이터가 들어갈 스택
         private Stack<ListViewItem> deletedStack = new Stack<ListViewItem>();
 
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("선택하신 항목이 삭제됩니다.\r계속 하시겠습니다?", "항목 삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -144,7 +146,6 @@ namespace WindowsFormsApp1
 
         // 검색시 - 삭제한 테이터가 들어간 동적배열 리스트
         private List<ListViewItem> deletedItems = new List<ListViewItem>();
-
 
         // 이름검색기능
         private void 검색_Click(object sender, EventArgs e)
@@ -183,7 +184,6 @@ namespace WindowsFormsApp1
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
         }
 
-
         private void listView1_DoubleClick(object sender, EventArgs e) // 하이퍼링크 실험중(가게이름 더블클릭)
         {
             foreach (ListViewItem item in listView1.SelectedItems)
@@ -195,6 +195,8 @@ namespace WindowsFormsApp1
                 {
                     Process.Start("https://map.naver.com/p/search/" + subItem[0].Text);
                 }
+                // 텍스트박스 클리어
+                    ClearTextBoxes();
             }
         }
 
@@ -208,13 +210,6 @@ namespace WindowsFormsApp1
             this.KeyPreview = true; // KeyPreview 속성을 true로 설정하여 폼에서 키 이벤트를 처리할 수 있도록 함
             this.KeyDown += new KeyEventHandler(Form1_KeyDown); // KeyDown 이벤트 핸들러 등록
         }
-    
-    
-
-            
-
-    
-
 
         // Ctrl + z 눌러을 때 - 스택에서 푸쉬되었던 데이터가 하나씩 팝하여 되돌리기가 된다.
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -227,16 +222,12 @@ namespace WindowsFormsApp1
                 {
                     ListViewItem popedItem = deletedStack.Pop();
                     listView1.Items.Add(popedItem);
-
                 }
                 else
                 {
                     MessageBox.Show("더 이상 삭제한 항목이 없습니다.");
                 }
             }
-        }
-
-        
+        }       
     }
 }
-
