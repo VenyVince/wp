@@ -39,6 +39,9 @@ namespace WindowsFormsApp1
                 item.SubItems.Add(textBox3.Text);
                 item.SubItems.Add(textBox4.Text);
                 item.SubItems.Add(textBox5.Text);
+                System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+                    textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text}, -1);
+                
 
                 // 가게 이름, 전화번호, 주소, 음식 종류, 메모를 리스트뷰에 추가.
                 listView1.Items.Add(item);
