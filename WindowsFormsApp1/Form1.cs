@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-//test
+
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
@@ -16,8 +18,10 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
 
+            // FormClosing 이벤트 핸들러를 등록합니다.
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+        }
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
             // 가게 이름, 전화번호, 주소, 음식 종류의 텍스트 박스 확인.
@@ -41,24 +45,100 @@ namespace WindowsFormsApp1
                 textBox5.Text = "";
             }
             // 가게 이름, 전화번호, 주소, 음식 종류중 미입력 정보가 있으면 메세지박스 띄움.
-            // + 추가할만한 기능 = 메세지박스 확인후 키보드 포커스 설정
+            // 메세지박스 확인후 키보드 포커스 설정
             else if (textBox1.Text == "")
             {
-                MessageBox.Show("가게 이름을 입력해 주세요.");
+                if (MessageBox.Show("가게 이름을 입력해 주세요.", "error") == DialogResult.OK)
+                    textBox1.Focus();
             }
             else if (textBox2.Text == "")
             {
-                MessageBox.Show("전화번호를 입력해 주세요.");
+                if (MessageBox.Show("전화번호를 입력해 주세요.", "error") == DialogResult.OK)
+                    textBox2.Focus();
             }
             else if (textBox3.Text == "")
             {
-                MessageBox.Show("주소를 입력해 주세요.");
+                if (MessageBox.Show("주소를 입력해 주세요.", "error") == DialogResult.OK)
+                    textBox3.Focus();
             }
             else if (textBox4.Text == "")
             {
-                MessageBox.Show("음식 종류를 입력해 주세요.");
+                if (MessageBox.Show("음식 종류를 입력해 주세요.", "error") == DialogResult.OK)
+                    textBox4.Focus();
+            }
+
+        }
+
+        private void SaveDataToFile()
+        {
+            string directoryPath = @"C:\준이"; // 원하는 디렉터리 경로
+            string fileName = "a.txt"; // 원하는 파일 이름
+
+            // 디렉터리가 존재하지 않으면 생성합니다.
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string filePath = Path.Combine(directoryPath, fileName); // 경로와 파일 이름을 합쳐 전체 파일 경로 생성
+
+            StringBuilder contentToSave = new StringBuilder();
+
+            foreach (ListViewItem item in listView1.Items)
+            {
+                contentToSave.AppendLine("가게 이름: " + item.SubItems[0].Text);
+                contentToSave.AppendLine("전화번호: " + item.SubItems[1].Text);
+                contentToSave.AppendLine("주소: " + item.SubItems[2].Text);
+                contentToSave.AppendLine("음식 종류: " + item.SubItems[3].Text);
+                contentToSave.AppendLine("메모: " + item.SubItems[4].Text);
+                contentToSave.AppendLine();
+            }
+
+            try
+            {
+                File.WriteAllText(filePath, contentToSave.ToString());
+                MessageBox.Show("파일이 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void SaveToFile()
+        {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                string filePath = saveFileDialog.FileName;
+
+                StringBuilder contentToSave = new StringBuilder();
+
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    contentToSave.AppendLine("가게 이름: " + item.SubItems[0].Text);
+                    contentToSave.AppendLine("전화번호: " + item.SubItems[1].Text);
+                    contentToSave.AppendLine("주소: " + item.SubItems[2].Text);
+                    contentToSave.AppendLine("음식 종류: " + item.SubItems[3].Text);
+                    contentToSave.AppendLine("메모: " + item.SubItems[4].Text);
+                    contentToSave.AppendLine();
+                }
+
+                try
+                {
+                    File.WriteAllText(filePath, contentToSave.ToString());
+                    MessageBox.Show("텍스트 파일에 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count == 0)
@@ -102,7 +182,7 @@ namespace WindowsFormsApp1
             textBox5.Clear();
         }
 
-       
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("선택하신 항목이 삭제됩니다.\r계속 하시겠습니다?", "항목 삭제", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -162,7 +242,33 @@ namespace WindowsFormsApp1
             }
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
         }
-    }
-    }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            // 여기에 더블클릭 이벤트가 발생했을 때 수행할 작업을 추가합니다.
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("프로그램을 종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    SaveDataToFile(); // Call the method to save data to the file
+                }
+            }
+        }
 
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
