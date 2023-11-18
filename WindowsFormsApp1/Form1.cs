@@ -68,6 +68,26 @@ namespace WindowsFormsApp1
             }
 
         }
+        private void SaveFormFile()
+        {
+            string sourceFilePath = @"C:\path\to\your\Form1.cs"; // 실제 Form1.cs 파일 경로로 대체해주세요
+            string destinationFilePath = @"C:\준이\Form1_copy.cs"; // Form1.cs를 저장할 목적지 경로
+
+            try
+            {
+                // Form1.cs 파일의 내용을 읽어옵니다.
+                string fileContent = File.ReadAllText(sourceFilePath);
+
+                // 다른 위치에 파일 내용을 저장합니다.
+                File.WriteAllText(destinationFilePath, fileContent);
+
+                MessageBox.Show("Form 파일이 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void SaveDataToFile()
         {
