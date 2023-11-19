@@ -64,129 +64,136 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 45);
+            this.label1.Location = new System.Drawing.Point(46, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.Size = new System.Drawing.Size(86, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "가게 이름";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 74);
+            this.label2.Location = new System.Drawing.Point(52, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "전화번호";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 102);
+            this.label3.Location = new System.Drawing.Point(73, 144);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(44, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "주소";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 127);
+            this.label4.Location = new System.Drawing.Point(73, 181);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(44, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "종류";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 158);
+            this.label5.Location = new System.Drawing.Point(73, 235);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(44, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "메모";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 282);
+            this.label6.Location = new System.Drawing.Point(52, 414);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 12);
+            this.label6.Size = new System.Drawing.Size(86, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "이름 검색";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 326);
+            this.label7.Location = new System.Drawing.Point(56, 480);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 12);
+            this.label7.Size = new System.Drawing.Size(86, 18);
             this.label7.TabIndex = 6;
             this.label7.Text = "음식 종류";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 37);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(150, 56);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 21);
+            this.textBox1.Size = new System.Drawing.Size(204, 28);
             this.textBox1.TabIndex = 7;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Location = new System.Drawing.Point(150, 99);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 21);
+            this.textBox2.Size = new System.Drawing.Size(204, 28);
             this.textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(105, 94);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox3.Location = new System.Drawing.Point(150, 141);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 21);
+            this.textBox3.Size = new System.Drawing.Size(204, 28);
             this.textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(105, 119);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox4.Location = new System.Drawing.Point(150, 178);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 21);
+            this.textBox4.Size = new System.Drawing.Size(204, 28);
             this.textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 155);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox5.Location = new System.Drawing.Point(150, 232);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(144, 97);
+            this.textBox5.Size = new System.Drawing.Size(204, 144);
             this.textBox5.TabIndex = 11;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 274);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox6.Location = new System.Drawing.Point(150, 411);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(144, 21);
+            this.textBox6.Size = new System.Drawing.Size(204, 28);
             this.textBox6.TabIndex = 12;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(105, 318);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox7.Location = new System.Drawing.Point(150, 477);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(144, 21);
+            this.textBox7.Size = new System.Drawing.Size(204, 28);
             this.textBox7.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(305, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(436, 44);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 18);
+            this.button1.Size = new System.Drawing.Size(94, 39);
             this.button1.TabIndex = 14;
             this.button1.Text = "정보저장";
             this.button1.UseVisualStyleBackColor = true;
@@ -194,10 +201,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(404, 37);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(556, 44);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 18);
+            this.button2.Size = new System.Drawing.Size(94, 39);
             this.button2.TabIndex = 15;
             this.button2.Text = "정보변경";
             this.button2.UseVisualStyleBackColor = true;
@@ -205,10 +212,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(510, 36);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(681, 46);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 18);
+            this.button3.Size = new System.Drawing.Size(94, 37);
             this.button3.TabIndex = 16;
             this.button3.Text = "정보삭제";
             this.button3.UseVisualStyleBackColor = true;
@@ -216,10 +223,10 @@
             // 
             // 검색
             // 
-            this.검색.Location = new System.Drawing.Point(601, 36);
-            this.검색.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.검색.Location = new System.Drawing.Point(808, 46);
+            this.검색.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.검색.Name = "검색";
-            this.검색.Size = new System.Drawing.Size(66, 18);
+            this.검색.Size = new System.Drawing.Size(94, 37);
             this.검색.TabIndex = 17;
             this.검색.Text = "검 색";
             this.검색.UseVisualStyleBackColor = true;
@@ -239,11 +246,11 @@
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(305, 66);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView1.Location = new System.Drawing.Point(436, 99);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(446, 272);
+            this.listView1.Size = new System.Drawing.Size(589, 406);
             this.listView1.TabIndex = 19;
             this.listView1.TileSize = new System.Drawing.Size(300, 30);
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -282,10 +289,10 @@
             // 
             // 되돌리
             // 
-            this.되돌리.Location = new System.Drawing.Point(688, 35);
-            this.되돌리.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.되돌리.Location = new System.Drawing.Point(935, 46);
+            this.되돌리.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.되돌리.Name = "되돌리";
-            this.되돌리.Size = new System.Drawing.Size(63, 18);
+            this.되돌리.Size = new System.Drawing.Size(90, 35);
             this.되돌리.TabIndex = 20;
             this.되돌리.Text = "되돌리기";
             this.되돌리.UseVisualStyleBackColor = true;
@@ -293,9 +300,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 360);
+            this.ClientSize = new System.Drawing.Size(1099, 540);
             this.Controls.Add(this.되돌리);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.검색);
@@ -316,9 +323,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Main";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
