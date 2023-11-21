@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
 
+<<<<<<< HEAD
         //test1
 
         public Boolean LoginCheck
@@ -34,6 +35,11 @@ namespace WindowsFormsApp1
             set { m_blLoginCheck = value; }
         }
 
+=======
+            // FormClosing 이벤트 핸들러를 등록합니다.
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+        }
+>>>>>>> origin/feature/IDgoodlife01
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
             // 가게 이름, 전화번호, 주소, 음식 종류의 텍스트 박스 확인.
@@ -81,8 +87,103 @@ namespace WindowsFormsApp1
             {
                 if (MessageBox.Show("음식 종류를 입력해 주세요.", "error") == DialogResult.OK)
                     textBox4.Focus();
+<<<<<<< HEAD
+=======
+            }
+
+        }
+        private void SaveFormFile()
+        {
+            string sourceFilePath = @"C:\path\to\your\Form1.cs"; // 실제 Form1.cs 파일 경로로 대체해주세요
+            string destinationFilePath = @"C:\준이\Form1_copy.cs"; // Form1.cs를 저장할 목적지 경로
+
+            try
+            {
+                // Form1.cs 파일의 내용을 읽어옵니다.
+                string fileContent = File.ReadAllText(sourceFilePath);
+
+                // 다른 위치에 파일 내용을 저장합니다.
+                File.WriteAllText(destinationFilePath, fileContent);
+
+                MessageBox.Show("Form 파일이 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> origin/feature/IDgoodlife01
             }
         }
+
+        private void SaveDataToFile()
+        {
+            string directoryPath = @"C:\준이"; // 원하는 디렉터리 경로
+            string fileName = "a.txt"; // 원하는 파일 이름
+
+            // 디렉터리가 존재하지 않으면 생성합니다.
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string filePath = Path.Combine(directoryPath, fileName); // 경로와 파일 이름을 합쳐 전체 파일 경로 생성
+
+            StringBuilder contentToSave = new StringBuilder();
+
+            foreach (ListViewItem item in listView1.Items)
+            {
+                contentToSave.AppendLine("가게 이름: " + item.SubItems[0].Text);
+                contentToSave.AppendLine("전화번호: " + item.SubItems[1].Text);
+                contentToSave.AppendLine("주소: " + item.SubItems[2].Text);
+                contentToSave.AppendLine("음식 종류: " + item.SubItems[3].Text);
+                contentToSave.AppendLine("메모: " + item.SubItems[4].Text);
+                contentToSave.AppendLine();
+            }
+
+            try
+            {
+                File.WriteAllText(filePath, contentToSave.ToString());
+                MessageBox.Show("파일이 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void SaveToFile()
+        {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                string filePath = saveFileDialog.FileName;
+
+                StringBuilder contentToSave = new StringBuilder();
+
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    contentToSave.AppendLine("가게 이름: " + item.SubItems[0].Text);
+                    contentToSave.AppendLine("전화번호: " + item.SubItems[1].Text);
+                    contentToSave.AppendLine("주소: " + item.SubItems[2].Text);
+                    contentToSave.AppendLine("음식 종류: " + item.SubItems[3].Text);
+                    contentToSave.AppendLine("메모: " + item.SubItems[4].Text);
+                    contentToSave.AppendLine();
+                }
+
+                try
+                {
+                    File.WriteAllText(filePath, contentToSave.ToString());
+                    MessageBox.Show("텍스트 파일에 저장되었습니다.", "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count == 0)
@@ -126,8 +227,11 @@ namespace WindowsFormsApp1
             textBox5.Clear();
         }
 
+<<<<<<< HEAD
         // 삭제시 - 삭제한 데이터가 들어갈 스택
         private Stack<ListViewItem> deletedStack = new Stack<ListViewItem>();
+=======
+>>>>>>> origin/feature/IDgoodlife01
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -213,6 +317,7 @@ namespace WindowsFormsApp1
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
         }
 
+<<<<<<< HEAD
         private void listView1_DoubleClick(object sender, EventArgs e) // 하이퍼링크 실험중(가게이름 더블클릭)
         {
             foreach (ListViewItem item in listView1.SelectedItems)
@@ -322,3 +427,34 @@ namespace WindowsFormsApp1
 
     }
 }
+=======
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            // 여기에 더블클릭 이벤트가 발생했을 때 수행할 작업을 추가합니다.
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("프로그램을 종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    SaveDataToFile(); // Call the method to save data to the file
+                }
+            }
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+>>>>>>> origin/feature/IDgoodlife01

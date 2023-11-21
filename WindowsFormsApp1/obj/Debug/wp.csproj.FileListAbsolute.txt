@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\gold4\Desktop\2team\WindowsFormsApp1\obj\Debug\wp.csproj.AssemblyReference.cache
 C:\Users\gold4\Desktop\2team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 C:\Users\gold4\Desktop\2team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
@@ -30,3 +31,16 @@ C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\Window
 C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+=======
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\wp.csproj.AssemblyReference.cache
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\wp.csproj.SuggestedBindingRedirects.cache
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\wp.csproj.GenerateResource.cache
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\wp.csproj.CoreCompileInputs.cache
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\82103\Desktop\팀플\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+>>>>>>> origin/feature/IDgoodlife01
