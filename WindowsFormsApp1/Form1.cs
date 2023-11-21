@@ -25,9 +25,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-
-<<<<<<< HEAD
-        //test1
+        }
 
         public Boolean LoginCheck
         {
@@ -39,7 +37,7 @@ namespace WindowsFormsApp1
             // FormClosing 이벤트 핸들러를 등록합니다.
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
         }
->>>>>>> origin/feature/IDgoodlife01
+
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
             // 가게 이름, 전화번호, 주소, 음식 종류의 텍스트 박스 확인.
@@ -87,8 +85,7 @@ namespace WindowsFormsApp1
             {
                 if (MessageBox.Show("음식 종류를 입력해 주세요.", "error") == DialogResult.OK)
                     textBox4.Focus();
-<<<<<<< HEAD
-=======
+
             }
 
         }
@@ -110,7 +107,7 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show("파일 저장 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
->>>>>>> origin/feature/IDgoodlife01
+
             }
         }
 
@@ -227,11 +224,8 @@ namespace WindowsFormsApp1
             textBox5.Clear();
         }
 
-<<<<<<< HEAD
-        // 삭제시 - 삭제한 데이터가 들어갈 스택
         private Stack<ListViewItem> deletedStack = new Stack<ListViewItem>();
-=======
->>>>>>> origin/feature/IDgoodlife01
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -317,7 +311,7 @@ namespace WindowsFormsApp1
             deletedItems.Clear(); // 삭제된 항목을 삭제합니다.
         }
 
-<<<<<<< HEAD
+
         private void listView1_DoubleClick(object sender, EventArgs e) // 하이퍼링크 실험중(가게이름 더블클릭)
         {
             foreach (ListViewItem item in listView1.SelectedItems)
@@ -427,7 +421,7 @@ namespace WindowsFormsApp1
 
     }
 }
-=======
+
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             // 여기에 더블클릭 이벤트가 발생했을 때 수행할 작업을 추가합니다.
@@ -457,4 +451,4 @@ namespace WindowsFormsApp1
         }
     }
 }
->>>>>>> origin/feature/IDgoodlife01
+
