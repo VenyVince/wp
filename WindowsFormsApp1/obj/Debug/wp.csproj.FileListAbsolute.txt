@@ -19,3 +19,14 @@ C:\Users\gold4\Desktop\teamproject\WindowsFormsApp1\obj\Debug\wp.csproj.Generate
 C:\Users\gold4\Desktop\teamproject\WindowsFormsApp1\obj\Debug\wp.csproj.CoreCompileInputs.cache
 C:\Users\gold4\Desktop\teamproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\gold4\Desktop\teamproject\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\wp.csproj.AssemblyReference.cache
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\wp.csproj.GenerateResource.cache
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\wp.csproj.CoreCompileInputs.cache
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Veny\Desktop\수업 관련 자료\윈도우 프로그래밍\team\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb

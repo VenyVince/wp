@@ -256,9 +256,9 @@ namespace WindowsFormsApp1
                     MessageBox.Show("더 이상 삭제한 항목이 없습니다.");
                 }
             }
-<<<<<<< HEAD
-        } 
-=======
+
+        
+
         }
 
 
@@ -319,6 +319,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
->>>>>>> master
+
     }
 }
