@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ using System.Xml.Linq;
 
 namespace WindowsFormsApp1
 {
+
     public partial class Form1 : Form
     {
+        // 입력한 정보들을 저장할 백업 리스트 생성 /     -   -   -   -   -   -   -   -   -   -   -   -   -   -(11.15)음식 종류 - 오금빈
+        private List<ListViewItem> allItems = new List<ListViewItem>();
 
         private Boolean m_blLoginCheck = false;
 
@@ -44,6 +48,10 @@ namespace WindowsFormsApp1
 
                 // 가게 이름, 전화번호, 주소, 음식 종류, 메모를 리스트뷰에 추가.
                 listView1.Items.Add(item);
+
+                // 백업 리스트에도 정보 저장 /     -   -   -   -   -   -   -   -   -   -   -   -   (11.15) 음식 종류 - 오금빈
+                allItems.Add((ListViewItem)item.Clone());
+
 
                 // 가게 이름, 전화번호, 주소, 음식 종류 텍스트박스 초기화.
                 textBox1.Text = "";
@@ -153,7 +161,28 @@ namespace WindowsFormsApp1
 
             foreach (ListViewItem 가게이름 in listView1.Items)
             {
+                ListViewItem.ListViewSubItemCollection subItem = 가게이름.SubItems; // 리스트뷰 가게이름 가져오기
 
+                if (subItem[0].Text == 이름)
+                {
+                    if (MessageBox.Show("가게이름\t전화번호\t주소\t종류\t메모\n" +
+                        subItem[0].Text + "\t" + subItem[1].Text + "\t" + subItem[2].Text + "\t" + subItem[3].Text + "\t" + subItem[4].Text + "\n" +
+                        "네이버에 검색하시겠습니까?",
+                        subItem[0].Text + " 검색 결과", MessageBoxButtons.YesNo) == DialogResult.Yes) // 메세지박스 YES == 네이버에 해당 가게이름 검색
+                    {
+                        Process.Start("https://map.naver.com/p/search/" + subItem[0].Text);
+                    }
+                }
+                else
+                {
+                    if(MessageBox.Show("검색 결과가 없습니다.", "오류")==DialogResult.OK)
+                        textBox6.Focus();
+                }
+            }
+
+            foreach (ListViewItem 가게이름 in listView1.Items)
+            {
+                
                 if (!가게이름.Text.Contains(이름))
                 {
                     listView1.Items.Remove(가게이름);
@@ -161,6 +190,7 @@ namespace WindowsFormsApp1
                 }
 
             }
+            /* 삭제해도 문제 없는 부분 -  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -(11,15) 오금빈
             string 음식종류 = textBox7.Text;
 
             foreach (ListViewItem 종류 in listView1.Items)
@@ -171,7 +201,7 @@ namespace WindowsFormsApp1
                     listView1.Items.Remove(종류);
                     deletedItems.Add(종류);
                 }
-            }
+            } */
         }
 
         private void 되돌리_Click(object sender, EventArgs e)
@@ -226,7 +256,69 @@ namespace WindowsFormsApp1
                     MessageBox.Show("더 이상 삭제한 항목이 없습니다.");
                 }
             }
+<<<<<<< HEAD
         } 
+=======
+        }
+
+
+        // 리스트뷰 컬럼 정렬 기능     -  -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -    (11.15) - 오금빈
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (listView1.Sorting == SortOrder.Ascending)//오름차순 정렬
+                listView1.Sorting = SortOrder.Descending;//내림차순 정렬
+            else
+                listView1.Sorting = SortOrder.Ascending;
+
+            listView1.ListViewItemSorter = new ListViewItemComparer(e.Column, listView1.Sorting);
+        }
+
+        //비교 정렬을 위한  IComparer 인터페이스
+        public class ListViewItemComparer : IComparer
+        {
+            private int col; // 컬럼 정보
+            private SortOrder order; // (오름,내림)차순 정렬 결정 값 
+
+            public ListViewItemComparer(int column, SortOrder order)
+            {
+                col = column;
+                this.order = order;
+            }
+            public int Compare(object x, object y)
+            {
+                int returnVal = -1;
+                returnVal = String.Compare(((ListViewItem)x).SubItems[col].Text, ((ListViewItem)y).SubItems[col].Text);
+                if (order == SortOrder.Descending)
+                    returnVal *= -1;
+                return returnVal;
+            }
+        }
+
+        // 음식 종류별 정렬    -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   (11.15) - 오금빈
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            string selected = comboBox1.SelectedItem.ToString();
+
+            if (selected != "음식 종류")
+            {
+                foreach (ListViewItem item in allItems)
+                {
+                    if (item.SubItems[3].Text == selected)
+                    {
+                        listView1.Items.Add((ListViewItem)item.Clone());
+                    }
+                }
+            }
+            else // '음식 종류'를 선택한 경우
+            {
+                foreach (ListViewItem item in allItems)
+                {
+                    listView1.Items.Add((ListViewItem)item.Clone());
+                }
+            }
+        }
+>>>>>>> master
     }
 }
-
