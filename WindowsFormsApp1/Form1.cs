@@ -25,7 +25,9 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-        }
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+        
+    }
 
         public Boolean LoginCheck
         {
@@ -33,10 +35,9 @@ namespace WindowsFormsApp1
             set { m_blLoginCheck = value; }
         }
 
-=======
+
             // FormClosing 이벤트 핸들러를 등록합니다.
-            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
-        }
+            
 
         private void button1_Click(object sender, EventArgs e) // 정보저장 버튼 클릭시 발생하는 이벤트.
         {
@@ -419,13 +420,8 @@ namespace WindowsFormsApp1
             }
         }
 
-    }
-}
+    
 
-        private void listView1_DoubleClick(object sender, EventArgs e)
-        {
-            // 여기에 더블클릭 이벤트가 발생했을 때 수행할 작업을 추가합니다.
-        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -442,12 +438,6 @@ namespace WindowsFormsApp1
                     SaveDataToFile(); // Call the method to save data to the file
                 }
             }
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
