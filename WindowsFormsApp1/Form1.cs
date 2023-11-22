@@ -39,12 +39,22 @@ namespace WindowsFormsApp1
                 item.SubItems.Add(textBox3.Text);
                 item.SubItems.Add(textBox4.Text);
                 item.SubItems.Add(textBox5.Text);
-                System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-                    textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text}, -1);
-                
 
                 // 가게 이름, 전화번호, 주소, 음식 종류, 메모를 리스트뷰에 추가.
-                listView1.Items.Add(item);
+                foreach(ListViewItem 중복내용 in listView1.Items)
+                {
+                    if(중복내용.Text == item.SubItems[2].Text)
+                    {
+                        MessageBox.Show("중복된 주소가 있습니다!", "중복!중복!");
+                    }
+                    else if(중복내용.Text != item.SubItems[2].Text)
+                    {
+                        listView1.Items.Add(item);
+                        //저장 완료시 메세지박스 출력.
+                        MessageBox.Show("입력하신 정보가 리스트뷰에 입력되었습니다.", "저장 성공!!");
+                        textBox1.Focus();
+                    }
+                }
 
                 // 가게 이름, 전화번호, 주소, 음식 종류 텍스트박스 초기화.
                 textBox1.Text = "";
@@ -52,10 +62,6 @@ namespace WindowsFormsApp1
                 textBox3.Text = "";
                 textBox4.Text = "";
                 textBox5.Text = "";
-
-                //저장 완료시 메세지박스 출력.
-                MessageBox.Show("입력하신 정보가 리스트뷰에 입력되었습니다.", "저장 성공!!");
-                textBox1.Focus();
             }
             // 가게 이름, 전화번호, 주소, 음식 종류중 미입력 정보가 있으면 메세지박스 띄움.
             // 메세지박스 확인후 키보드 포커스 설정
